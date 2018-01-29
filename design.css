@@ -1,0 +1,19 @@
+body{width:100%;height:700px; margin:0;padding:0}
+#root > div{width:600px;margin:auto;margin-top:10%;font-family:'Roboto',sans-serif;}
+#signup,#login{background:#2c3e50;}
+#buttons > p{width:50%;height:50%;float:left; color:white;text-align:center;padding-top:25px;margin:0;}
+#buttons > p:hover{background:#e74c3c;color:#2c3e50;cursor:pointer;}
+#buttons{height:100px;background:green}
+#signup > input, #signup > button{margin-top:20px;margin-left:125px;height:25px;}
+
+#first,#last{width:250px;border:none;}
+#email{width:175px;}
+#password{width:125px;margin:0px!important;}
+#confirm{width:250px;}
+
+#signup > button{width:125px;}
+#signup{height:300px;}
+
+#login > input, #login > button{argin-top:20px;margin-left:125px;height:25px;}
+#login > button{width:125px;}
+#login{height:150px;}

@@ -1,0 +1,74 @@
+<html>
+<head>
+  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.1.js"></script>
+    <script src="https://fb.me/react-dom-15.0.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script type="text/babel">
+ var Parent = React.createClass({
+  getInitialState:function(){
+    return {signup:false,login:true}
+  },
+  switch:function(word){
+    // var signup = this.state.signup;
+    // var login = this.state.login;
+    this.setState({signup:false,login:false})
+    if(word=="signup"){ return this.setState({signup:true})}
+    if(word=="login"){ return this.setState({login:true})}
+    return null
+  },
+  render:function(){
+    return(<div>
+              <div id="buttons">
+                <p id ="singupButton" onClick={this.switch.bind(null,"signup")}>Sign Up</p>
+                <p id ="loginButton" onClick={this.switch.bind(null,"login")}>Login</p>
+              </div>
+        {this.state.signup?<SignUp />:null}
+        {this.state.login?<Login />:null}
+        </div>);
+  }
+
+});
+var SignUp = React.createClass({
+  render:function(){
+    return(<div>
+
+    <div id="signup">
+      <input type="text" id="first" placeholder="First Name" />
+      <input type="text" id="last" placeholder="Last Name" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <input type="password" id="confirm" placeholder="Confirm password" />
+      <button type="button" className="btn btn-outline-primary">Send</button>
+    </div>
+      </div>);
+  }
+});
+
+var Login = React.createClass({
+  render:function(){
+    return(<div>
+        <div id="login">
+        <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button className="w3-button w3-white w3-border w3-border-red w3-round-large">Send</button>
+      </div>
+        </div>);
+  },
+});
+ReactDOM.render(
+  <Parent />,
+  document.getElementById('root')
+);
+
+ </script>
+
+  </body>
+</html>
